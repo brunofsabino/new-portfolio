@@ -37,11 +37,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={` ${roboto.variable} antialiased container  md:mx-auto`} // ${geistSans.variable} ${geistMono.variable}
+        className={` ${roboto.variable} antialiased container  md:mx-auto bg-[#FAF5EA] `} // ${geistSans.variable} ${geistMono.variable}
       >
         <header className="flex p-4  ">
           <div className="flex-1 ">
-            <div className="p-2">
+            <div className="p-2 font-sans font-bold">
               BRUNO FERRAZ SABINO
             </div>
             <Separator className="" />
