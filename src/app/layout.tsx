@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Separator } from "@/components/ui/separator";
+import { NavigationMenuDemo } from "@/components/menu";
+import { Roboto } from 'next/font/google';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -11,6 +14,11 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+const roboto = Roboto({
+  subsets: ['latin'], // Inclui os caracteres padrão
+  weight: ['400', '700'], // Escolha os pesos desejados
+  variable: '--font-roboto', // Cria uma variável CSS para Tailwind
 });
 
 export const metadata: Metadata = {
@@ -29,9 +37,26 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${roboto.variable} antialiased container  md:mx-auto`} // ${geistSans.variable} ${geistMono.variable}
       >
-        <div>Alo alo</div>
+        <header className="flex p-4  ">
+          <div className="flex-1 ">
+            <div className="p-2">
+              BRUNO FERRAZ SABINO
+            </div>
+            <Separator className="" />
+
+          </div>
+          <div className=" ">
+            <Separator orientation="vertical" />
+          </div>
+          <div className="">
+            <Separator className="" />
+            <div className="flex">
+              <NavigationMenuDemo />
+            </div>
+          </div>
+        </header>
         {children}
       </body>
     </html>
