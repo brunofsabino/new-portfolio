@@ -62,23 +62,16 @@ export function NavigationMenuDemo() {
         <NavigationMenu className="font-sans font-bold ">
             <NavigationMenuList className="bg-[#FAF5EA]">
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Link href="#home" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Home
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem >
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Sobre mim
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
                     <NavigationMenuTrigger>Portfólio</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] ">
+                        <ul className="grid gap-3 p-4 md:w-[200px] lg:w-[400px] lg:grid-cols-[.75fr_1fr] ">
                             <li className="row-span-3">
                                 <NavigationMenuLink asChild>
                                     <a
@@ -86,30 +79,37 @@ export function NavigationMenuDemo() {
                                         href="/"
                                     >
                                         {/* <Icons.logo className="h-6 w-6" /> */}
-                                        <div className="mb-2 mt-4 text-lg font-medium">
+                                        {/* <div className="mb-2 mt-4 text-lg font-medium">
                                             shadcn/ui
-                                        </div>
-                                        <p className="text-sm leading-tight text-muted-foreground">
+                                        </div> */}
+                                        {/* <p className="text-sm leading-tight text-muted-foreground">
                                             Beautifully designed components built with Radix UI and
                                             Tailwind CSS.
-                                        </p>
+                                        </p> */}
                                     </a>
                                 </NavigationMenuLink>
                             </li>
                             <ListItem href="/docs" title="Introduction">
                                 Re-usable components built using Radix UI and Tailwind CSS.
                             </ListItem>
-                            <ListItem href="/docs/installation" title="Installation">
+                            {/* <ListItem href="/docs/installation" title="Installation">
                                 How to install dependencies and structure your app.
                             </ListItem>
                             <ListItem href="/docs/primitives/typography" title="Typography">
                                 Styles for headings, paragraphs, lists...etc
-                            </ListItem>
+                            </ListItem> */}
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Contato</NavigationMenuTrigger>
+                    <Link href="#about" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            Sobre mim
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    {/* <NavigationMenuTrigger>Contato</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                             {components.map((component) => (
@@ -122,7 +122,12 @@ export function NavigationMenuDemo() {
                                 </ListItem>
                             ))}
                         </ul>
-                    </NavigationMenuContent>
+                    </NavigationMenuContent> */}
+                    <Link href="#contact" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            Contato
+                        </NavigationMenuLink>
+                    </Link>
                 </NavigationMenuItem>
             </NavigationMenuList >
         </NavigationMenu >

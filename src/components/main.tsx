@@ -9,7 +9,7 @@ import ButtonWhats from "@/components/button-whats";
 
 const Main = () => {
     return (
-        <main className=" flex  min-h-[500px] pb-4">
+        <section id="home" className=" flex  min-h-[500px] pb-4">
             <div className=" flex items-center justify-center  w-[7%] h-[500px]">
                 <div className="rotate-90 font-sans text-gray-500 ">
                     <div className=" flex justify-evenly items-end w-[450px] h-[100px]">
@@ -56,7 +56,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
     )
 }
 

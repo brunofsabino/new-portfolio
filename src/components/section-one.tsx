@@ -2,13 +2,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 
 const SectionOne = () => {
     return (
-        <section className="bg-[#001726] rounded-3xl mt-5 p-8 flex flex-col items-center justify-center">
+        <section id="about" className="bg-[#001726] rounded-3xl mt-5 p-8 flex flex-col items-center justify-center">
             <div className="mt-8 flex items-center">
                 <Avatar className="w-20 h-20">
                     <AvatarImage src="/assets/images/Bruno3.jpeg" className="w-full h-full" />
                     <AvatarFallback>BFS</AvatarFallback>
                 </Avatar>
-                <h1 className="text-white ml-2 text-xl font-bold font-sans">Bruno Ferraz Sabino</h1>
+                <h1 className="text-white ml-2 text-3xl font-bold font-sans">Bruno Ferraz Sabino</h1>
             </div>
             <div className="text-white mt-14 font-sans">
                 <p>Apaixonado por tecnologia e movido pela vontade de contribuir com projetos que realmente impactam a vida das pessoas, comecei minha jornada em Sistemas de Informação, onde me formei em 2017. Desde cedo, mergulhei no mundo do desenvolvimento web, explorando PHP, JavaScript e, posteriormente, NodeJS para criar APIs e sistemas eficientes.</p>

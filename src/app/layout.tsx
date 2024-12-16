@@ -37,9 +37,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={` ${roboto.variable} antialiased container  md:mx-auto bg-[#FAF5EA] `} // ${geistSans.variable} ${geistMono.variable}
+        className={` ${roboto.variable} antialiased  md:mx-auto bg-[#FAF5EA] `} // ${geistSans.variable} ${geistMono.variable}
       >
-        <header className="flex p-4  ">
+        <header className="flex p-4 container mx-auto">
           <div className="flex-1 ">
             <div className="p-2 font-sans font-bold">
               BRUNO FERRAZ SABINO
@@ -57,7 +57,12 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-        {children}
+        <main className="container mx-auto">{children}</main>
+        <footer className="bg-[#001726] bg-primary text-white">
+          <div className="container mx-auto text-center p-8 font-bold font-sans">
+            Feito com &#x1F496; por Bruno Ferraz Sabino
+          </div>
+        </footer>
       </body>
     </html>
   );
