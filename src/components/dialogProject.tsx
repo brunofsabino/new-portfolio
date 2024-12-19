@@ -9,6 +9,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Portfolio } from "@/types/Portfolio"
+import Link from "next/link";
 // import { Input } from "@/components/ui/input"
 // import { Label } from "@/components/ui/label"
 
@@ -17,6 +18,14 @@ interface DialogProjectProps {
 }
 
 export function DialogProject({ data }: DialogProjectProps) {
+    const createSlug = (title: string) => {
+        return title
+            .toLowerCase() // Converte para letras minúsculas
+            .normalize('NFD') // Divide caracteres acentuados em partes (ex.: "é" -> "e" +  ́)
+            .replace(/[\u0300-\u036f]/g, '') // Remove marcas de acentuação
+            .replace(/\s+/g, '-') // Substitui espaços por hífens
+            .replace(/[^\w-]+/g, ''); // Remove caracteres especiais, incluindo ? e !
+    };
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -47,7 +56,9 @@ export function DialogProject({ data }: DialogProjectProps) {
                     </div>
                 </div>
                 <DialogFooter>
-                    <Button type="submit">Save changes</Button>
+                    <Link href={`portfolio/${createSlug(data.title)}`} >
+                        <Button >Save changes</Button>
+                    </Link>
                 </DialogFooter>
             </DialogContent>
         </Dialog>
