@@ -5,8 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 const SectionTwo = () => {
     const dataPortfolio: Portfolio[] = [
         {
-            title: "Titulo 1",
-            img: 'imagem 1',
+            title: "Quantos de você existe no Brasil?",
+            img: '/assets/images/bg-quantos-existe.png',
             technologies: ['react', 'js', 'html']
         },
         {
@@ -21,9 +21,9 @@ const SectionTwo = () => {
         },
     ]
     return (
-        <section className="mt-5 p-8 flex flex-col items-center justify-center">
+        <section id="portfolio" className="mt-5 p-8 flex flex-col items-center justify-center">
             <div className="mt-8 flex items-center">
-                <h1 className="ml-2 text-3xl font-bold font-sans">Portfólio</h1>
+                <h1 className="ml-2 lg:text-3xl text-2xl font-bold font-sans">Portfólio</h1>
             </div>
             <div className="mt-14 w-full font-sans flex flex-wrap justify-evenly">
                 {dataPortfolio.map((item, index) => (

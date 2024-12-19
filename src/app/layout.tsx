@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Separator } from "@/components/ui/separator";
-import { NavigationMenuDemo } from "@/components/menu";
+
 import { Roboto } from 'next/font/google';
+import Header from "@/components/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,24 +39,7 @@ export default function RootLayout({
       <body
         className={` ${roboto.variable} antialiased  md:mx-auto bg-[#FAF5EA] `} // ${geistSans.variable} ${geistMono.variable}
       >
-        <header className="flex p-4 container mx-auto">
-          <div className="flex-1 ">
-            <div className="p-2 font-sans font-bold">
-              BRUNO FERRAZ SABINO
-            </div>
-            <Separator className="" />
-
-          </div>
-          <div className=" ">
-            <Separator orientation="vertical" />
-          </div>
-          <div className="">
-            <Separator className="" />
-            <div className="flex">
-              <NavigationMenuDemo />
-            </div>
-          </div>
-        </header>
+        <Header />
         <main className="container mx-auto">{children}</main>
         <footer className="bg-[#001726] bg-primary text-white">
           <div className="container mx-auto text-center p-8 font-bold font-sans">

@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 const SectionThree = () => {
     return (
-        <section className="bg-[#001726] rounded-3xl mt-5 p-8 flex flex-col items-center justify-center">
+        <section id="skills" className="bg-[#001726] rounded-3xl mt-5 m-3 p-8 flex flex-col items-center justify-center">
             <div className="mt-8 flex items-center">
-                <h1 className="text-white ml-2 text-3xl font-bold font-sans">Habilidades</h1>
+                <h1 className="text-white ml-2 lg:text-3xl text-2xl font-bold font-sans">Habilidades</h1>
             </div>
-            <div className="text-white mt-14 font-sans flex flex-wrap items-center justify-evenly">
-                <div className="flex border border-[#FAF5EA] rounded-3xl m-4">
+            <div className="text-white mt-14 font-sans flex flex-wrap  justify-evenly">
+                <div className="flex flex-wrap items-center justify-evenly border border-[#FAF5EA] rounded-3xl m-4">
                     <Image
                         src={"/assets/images/Laravel.png"}
                         width={100}
@@ -24,7 +24,7 @@ const SectionThree = () => {
                         className="rounded-2xl m-3"
                     />
                 </div>
-                <div className="flex border border-[#FAF5EA] rounded-3xl m-4">
+                <div className="flex flex-wrap items-center justify-evenly border border-[#FAF5EA] rounded-3xl m-4">
                     <Image
                         src={"/assets/images/Node.png"}
                         width={100}
@@ -47,7 +47,7 @@ const SectionThree = () => {
                         className="rounded-2xl m-3"
                     />
                 </div>
-                <div className="flex border border-[#FAF5EA] rounded-3xl m-4">
+                <div className="flex flex-wrap items-center justify-evenly border border-[#FAF5EA] rounded-3xl m-4">
                     <Image
                         src={"/assets/images/Mysql.png"}
                         width={100}
@@ -63,7 +63,7 @@ const SectionThree = () => {
                         className="rounded-2xl m-3"
                     />
                 </div>
-                <div className="flex border border-[#FAF5EA] rounded-3xl m-4">
+                <div className="flex flex-wrap items-center justify-evenly border border-[#FAF5EA] rounded-3xl m-4">
                     <Image
                         src={"/assets/images/Git.png"}
                         width={100}
@@ -72,7 +72,7 @@ const SectionThree = () => {
                         className="rounded-2xl m-3"
                     />
                 </div>
-                <div className="flex border border-[#FAF5EA] rounded-3xl m-4">
+                <div className="flex flex-wrap items-center justify-evenly border border-[#FAF5EA] rounded-3xl m-4">
                     <Image
                         src={"/assets/images/Typescript.png"}
                         width={100}

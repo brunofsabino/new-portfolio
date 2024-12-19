@@ -21,15 +21,15 @@ export function DialogProject({ data }: DialogProjectProps) {
         <Dialog>
             <DialogTrigger asChild>
                 {/* <Button variant="outline">{data.title}</Button> */}
-                <div className="border w-72 h-52 m-5 bg-primary rounded-3xl">
+                <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 w-72 h-52 m-5 border-primary rounded-3xl">
                     {data.title}
                 </div>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>Edit profile</DialogTitle>
+                    <DialogTitle>{data.title}</DialogTitle>
                     <DialogDescription>
-                        Make changes to your profile here. Click save when you're done.
+                        {data.title}
                     </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
