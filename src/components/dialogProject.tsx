@@ -30,8 +30,9 @@ export function DialogProject({ data }: DialogProjectProps) {
         <Dialog>
             <DialogTrigger asChild>
                 {/* <Button variant="outline">{data.title}</Button> */}
-                <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 w-72 h-52 m-5 border-primary rounded-3xl">
-                    {data.title}
+                <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 w-72 h-52 m-5 border-primary rounded-3xl flex justify-center items-center">
+                    <h1 className="md:text-3xl text-2xl text-white text-center font-extrabold" >{data.title}</h1>
+
                 </div>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">

@@ -38,7 +38,7 @@ const MenuNavigationMobile = () => {
                 <NavigationMenuItem className=" " >
                     <SheetClose asChild>
                         {/* <Link href="#home" passHref legacyBehavior> */}
-                        <NavigationMenuLink href="#home" className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink href="/#home" className={navigationMenuTriggerStyle()}>
                             <div className="flex justify-center items-center">
                                 <FaHome className="text-2xl mr-1 font-sans" color="#7c3aed" /><span>Home</span>
                             </div>
@@ -49,7 +49,7 @@ const MenuNavigationMobile = () => {
                 <Separator className="separator w-full my-2" />
                 <NavigationMenuItem className=" " >
                     <SheetClose asChild>
-                        <NavigationMenuLink href="#portfolio" className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink href="/#portfolio" className={navigationMenuTriggerStyle()}>
                             <div className="flex justify-center items-center">
                                 <SiFiles className="text-2xl mr-1 " color="#001726" /><span>Portfólio</span>
                             </div>
@@ -83,7 +83,7 @@ const MenuNavigationMobile = () => {
                 </NavigationMenuItem> */}
                 <NavigationMenuItem className=" " >
                     <SheetClose asChild>
-                        <NavigationMenuLink href="#about" className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink href="/#about" className={navigationMenuTriggerStyle()}>
                             <div className="flex justify-center items-center">
                                 <FcAbout className="text-2xl mr-1 " color="#48BC6A" /><span>Sobre mim</span>
                             </div>
@@ -93,7 +93,7 @@ const MenuNavigationMobile = () => {
                 <Separator />
                 <NavigationMenuItem className=" " >
                     <SheetClose asChild>
-                        <NavigationMenuLink href="#skills" className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink href="/#skills" className={navigationMenuTriggerStyle()}>
                             <div className="flex justify-center items-center">
                                 <FaTools className="text-2xl mr-1 " color="#7c3aed" /><span>Habilidades</span>
                             </div>
@@ -103,7 +103,7 @@ const MenuNavigationMobile = () => {
                 <Separator className="separator w-full my-2" />
                 <NavigationMenuItem className=" " >
                     <SheetClose asChild>
-                        <NavigationMenuLink href="#contact" className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink href="/#contact" className={navigationMenuTriggerStyle()}>
                             <div className="flex justify-center items-center">
                                 <FaPhoneVolume className="text-2xl mr-1 " color="#001726" /><span>Contato</span>
                             </div>

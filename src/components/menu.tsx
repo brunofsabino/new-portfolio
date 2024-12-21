@@ -62,7 +62,7 @@ export function NavigationMenuDemo() {
         <NavigationMenu className="font-sans font-bold ">
             <NavigationMenuList className="bg-[#FAF5EA]">
                 <NavigationMenuItem>
-                    <Link href="#home" legacyBehavior passHref>
+                    <Link href="/#home" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Home
                         </NavigationMenuLink>
@@ -102,14 +102,14 @@ export function NavigationMenuDemo() {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="#about" legacyBehavior passHref>
+                    <Link href="/#about" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Sobre mim
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="#skills" legacyBehavior passHref>
+                    <Link href="/#skills" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Habilidades
                         </NavigationMenuLink>
@@ -130,7 +130,7 @@ export function NavigationMenuDemo() {
                             ))}
                         </ul>
                     </NavigationMenuContent> */}
-                    <Link href="#contact" legacyBehavior passHref>
+                    <Link href="/#contact" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Contato
                         </NavigationMenuLink>

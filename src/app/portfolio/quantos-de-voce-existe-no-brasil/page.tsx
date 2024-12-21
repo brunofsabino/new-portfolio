@@ -2,37 +2,37 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-//import { Bar } from "react-chartjs-2";
-//import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
-
-//import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+// Tipo para cada item no array `res`
+interface ResItem {
+    periodo: string;
+    frequencia: number;
+}
 
-// import {
-//     Chart as ChartJS,
-//     CategoryScale,
-//     LinearScale,
-//     BarElement,
-//     Title,
-//     Tooltip,
-//     Legend,
-// } from "chart.js";
+// Tipo para o objeto principal da API
+interface APIResponse {
+    nome: string;
+    sexo: string | null;
+    localidade: string;
+    res: ResItem[];
+}
 
-// Registrar os componentes necessários do Chart.js
-//ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+// Tipo para os dados processados
+interface ProcessedDataItem {
+    periodo: string;
+    frequencia: number;
+}
 
 const Page = () => {
-    const [name, setName] = useState(""); // Estado para armazenar o nome digitado
-    const [nameResult, setNameResult] = useState(""); // Estado para armazenar o nome digitado
-    const [results, setResults] = useState(null); // Estado para armazenar os resultados
-    const [chartData, setChartData] = useState([]); // Dados formatados para o gráfico
-    const [loading, setLoading] = useState(false); // Estado de carregamento
-    const [error, setError] = useState(null); // Estado para erros
+    const [name, setName] = useState("");
+    const [nameResult, setNameResult] = useState("");
+    const [chartData, setChartData] = useState<ProcessedDataItem[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
-    const processAPIData = (data) => {
-        return data[0]?.res.map(item => {
+    const processAPIData = (data: APIResponse[]): ProcessedDataItem[] => {
+        return data[0]?.res.map((item: ResItem) => {
             // Remove colchetes e ajusta o formato do período
             const periodo = item.periodo
                 .replace("[", "") // Remove o colchete inicial
@@ -41,7 +41,7 @@ const Page = () => {
                 .replace("[", ""); // Remove o colchete final, caso necessário
 
             return {
-                periodo, // Período formatado
+                periodo,
                 frequencia: item.frequencia,
             };
         }) || [];
@@ -61,33 +61,25 @@ const Page = () => {
             if (!response.ok) throw new Error("Erro ao buscar dados.");
 
             const data = await response.json();
-            //setResults(data);
-            // Processa os dados para o gráfico
-            // const formattedData = data[0]?.res?.map(item => ({
-            //     periodo: item.periodo.replace("[", "").replace("]", ""), // Remove os colchetes do período
-            //     frequencia: item.frequencia
-            // })) || [];
             const formattedData = processAPIData(data);
             setNameResult(name);
-            // if (typeof (name) === string) {
-
-
-            // }
             setChartData(formattedData);
         } catch (err) {
-            setError(err.message || "Ocorreu um erro.");
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError("Ocorreu um erro.");
+            }
             setChartData([]);
         } finally {
             setLoading(false);
         }
     };
 
-    // Configuração dos dados do gráfico
-
     return (
         <div style={{ backgroundImage: 'url(/assets/images/bg-quantos-existe.png)' }} className="w-full min-h-screen font-sans flex items-center justify-center flex-col">
             <div className="border rounded-2xl m-4 p-4 flex flex-col items-center justify-center bg-[#000000a3]">
-                <h1 className="text-5xl text-white text-center font-extrabold" >QUANTOS DE VOCÊ EXISTE NO BRASIL?</h1>
+                <h1 className="md:text-5xl text-3xl text-white text-center font-extrabold" >QUANTOS DE VOCÊ EXISTE NO BRASIL?</h1>
                 <p className="text-white">Digite seu nome e clique em Buscar</p>
                 <div className="flex items-center justify-center w-full">
                     <Input
@@ -104,28 +96,8 @@ const Page = () => {
                 {error && <p className="text-red-500 mt-2">{error}</p>}
                 {chartData.length > 0 && (
                     <div className="w-full  mt-4 mb-10 p-5  bg-[#000000a3] rounded-2xl">
-                        <h2 className="text-2xl font-bold text-white mb-4">{nameResult} - Clique no gráfico para ver de acordo com os períodos</h2>
-                        {/* <ResponsiveContainer width="100%" height="100%">
-                            <LineChart data={chartData}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="periodo" />
-                                <YAxis />
-                                <Tooltip />
-                                <Line type="monotone" dataKey="frequencia" stroke="#8884d8" activeDot={{ r: 8 }} />
-                            </LineChart>
-                        </ResponsiveContainer> */}
-
-                        {/* <ResponsiveContainer width="100%" height={400}>
-                            <BarChart data={chartData}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="periodo" />
-                                <YAxis />
-                                <Tooltip />
-                                <Bar dataKey="frequencia" fill="#8884d8" />
-                            </BarChart>
-                        </ResponsiveContainer> */}
-
-                        <ResponsiveContainer width="100%" >
+                        <h2 className="md:text-2xl text-base font-bold text-white mb-4">{nameResult} - Interaja com o gráfico para visualizar os dados correspondentes a cada período.</h2>
+                        <ResponsiveContainer width="100%" height={300} className="p-1">
                             <AreaChart data={chartData}>
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis dataKey="periodo" />
