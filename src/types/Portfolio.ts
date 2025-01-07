@@ -1,5 +1,6 @@
 export type Portfolio = {
     title: string,
     img: string,
-    technologies: string[]
+    technologies: string[],
+    description: string
 }

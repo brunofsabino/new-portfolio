@@ -1,13 +1,17 @@
 import { Separator } from "@/components/ui/separator";
 import { NavigationMenuDemo } from "@/components/menu";
 import { SheetMenuMobile } from "./sheetMenuMobile";
+import Link from "next/link";
 
 const Header = () => {
     return (
         <header className="flex p-4 container mx-auto">
             <div className="flex-1 ">
                 <div className="p-2 font-sans font-bold">
-                    BRUNO FERRAZ SABINO
+                    <Link href="/#home" legacyBehavior passHref>
+                        BRUNO FERRAZ SABINO
+                    </Link>
+
                 </div>
                 <Separator className="" />
 

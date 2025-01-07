@@ -30,38 +30,32 @@ export function DialogProject({ data }: DialogProjectProps) {
         <Dialog>
             <DialogTrigger asChild>
                 {/* <Button variant="outline">{data.title}</Button> */}
-                <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 w-72 h-52 m-5 border-primary rounded-3xl flex justify-center items-center">
+                <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 cursor-pointer w-72 h-52 m-5 border-primary rounded-3xl flex flex-col justify-evenly items-center">
                     <h1 className="md:text-3xl text-2xl text-white text-center font-extrabold" >{data.title}</h1>
-
+                    <div className="border-2 border-primary rounded-3xl w-[70%] bg-[#FAF5EA] p-1 text-center font-bold  ">
+                        {data.technologies.join(", ")}
+                    </div>
                 </div>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>{data.title}</DialogTitle>
+                    <DialogTitle> <div className="font-sans text-primary">Projeto: {data.title}</div> </DialogTitle>
                     <DialogDescription>
-                        {data.title}
+                        <div className="text-black font-sans mt-3">
+                            {data.description}
+                            <span className="font-bold">
+                                Tecnologias utilizadas: {data.technologies.join(", ")}.
+                            </span>
+                        </div>
                     </DialogDescription>
                 </DialogHeader>
-                <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        {/* <Label htmlFor="name" className="text-right">
-                            Name
-                        </Label>
-                        <Input id="name" value="Pedro Duarte" className="col-span-3" /> */}
-                    </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        {/* <Label htmlFor="username" className="text-right">
-                            Username
-                        </Label>
-                        <Input id="username" value="@peduarte" className="col-span-3" /> */}
-                    </div>
-                </div>
+
                 <DialogFooter>
                     <Link href={`portfolio/${createSlug(data.title)}`} >
-                        <Button >Save changes</Button>
+                        <Button >Veja o Projeto</Button>
                     </Link>
                 </DialogFooter>
             </DialogContent>
-        </Dialog>
+        </Dialog >
     )
 }
