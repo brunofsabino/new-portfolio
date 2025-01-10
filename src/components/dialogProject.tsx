@@ -30,9 +30,9 @@ export function DialogProject({ data }: DialogProjectProps) {
         <Dialog>
             <DialogTrigger asChild>
                 {/* <Button variant="outline">{data.title}</Button> */}
-                <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 cursor-pointer w-72 h-52 m-5 border-primary rounded-3xl flex flex-col justify-evenly items-center">
+                <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 cursor-pointer w-72 h-52 m-5 border-[#001726] rounded-3xl flex flex-col justify-evenly items-center">
                     <h1 className="md:text-3xl text-2xl text-white text-center font-extrabold" >{data.title}</h1>
-                    <div className="border-2 border-primary rounded-3xl w-[70%] bg-[#FAF5EA] p-1 text-center font-bold  ">
+                    <div className="border-2 border-[#001726] rounded-3xl w-[70%] bg-[#FAF5EA] p-1 text-center font-bold  ">
                         {data.technologies.join(", ")}
                     </div>
                 </div>
