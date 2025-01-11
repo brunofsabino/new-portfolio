@@ -9,7 +9,9 @@ const Header = () => {
             <div className="flex-1 ">
                 <div className="p-2 font-sans font-bold">
                     <Link href="/#home" legacyBehavior passHref>
-                        BRUNO FERRAZ SABINO
+                        <div className="flex cursor-pointer">
+                            BRUNO <p className="text-primary ml-1">FERRAZ SABINO</p>
+                        </div>
                     </Link>
 
                 </div>

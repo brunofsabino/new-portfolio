@@ -66,14 +66,14 @@ const CommandAutocomplete = ({ query, onSelect, onQueryChange, onClose, showList
     );
 
     return (
-        <Command className="w-[80%] mr-3">
+        <Command className="w-[100%] md:w-[80%] mr-3 mb-3 md:mb-0">
 
             <input
                 type="text"
                 value={query}
                 onChange={(e) => onQueryChange(e.target.value)} // Atualiza o estado quando o usuário digita
                 placeholder="Digite o modelo e selecione uma opção..."
-                className="border p-2 rounded w-full md:w-[50%]"
+                className="border p-2 rounded w-full text-xs md:text-base"
             />
             {/* <CommandList>
                 {filteredOptions.length > 0 ? (

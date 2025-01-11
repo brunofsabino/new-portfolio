@@ -12,9 +12,9 @@ const SectionTwo = () => {
         },
         {
             title: "Qual é o valor do seu veículo?",
-            img: 'imagem 2',
+            img: '/assets/images/bg-qual-valor.webp',
             technologies: ['NodeJS', 'ReactJS'],
-            description: "..."
+            description: "Este projeto permite que você descubra o valor atualizado do seu veículo utilizando dados oficiais da Tabela Fipe. Com uma interface intuitiva, os usuários podem pesquisar por marca, modelo e ano, obtendo rapidamente informações precisas e confiáveis. Este aplicativo destaca-se por sua praticidade e integração com APIs modernas, proporcionando uma experiência interativa e informativa."
         },
         {
             title: "Titulo 3",
@@ -25,7 +25,7 @@ const SectionTwo = () => {
     ]
     return (
         <section id="portfolio" className="mt-8 p-8 flex flex-col items-center justify-center">
-            <div className="mt-8 items-center flex flex-col">
+            <div className="mt-8 items-center flex flex-col text-center">
                 <h1 className="ml-2 lg:text-3xl text-2xl font-bold font-sans text-primary ">Portfólio</h1>
                 <p>Clique em um dos projetos para obter mais informações e visualizar o funcionamento.</p>
             </div>

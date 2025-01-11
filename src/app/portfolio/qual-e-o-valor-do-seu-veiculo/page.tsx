@@ -85,7 +85,7 @@ const Page = () => {
             <div className="border rounded-2xl m-4 p-4 flex flex-col items-center justify-center bg-[#000000db]">
                 <h1 className="md:text-5xl text-3xl text-white text-center font-extrabold" >QUAL É O VALOR DO SEU VEÍCULO?</h1>
                 <p className="text-white text-center">Escolha uma das opções dos Modelos e clique em Buscar</p>
-                <div className="flex w-[80%] justify-center mt-4">
+                <div className="flex w-[95%] md:w-[80%] justify-center mt-4 flex-col md:flex-row">
                     <CommandAutocomplete
                         query={query}
                         onSelect={handleSelect}
@@ -97,10 +97,10 @@ const Page = () => {
                     <Button onClick={handleSearch} disabled={loading} > {loading ?? <Loader2 className="animate-spin" />} {loading ? "Aguarde..." : "Buscar"}</Button>
                 </div>
                 {data.length > 0 && (
-                    <div className="bg-[#FAF5EA] rounded-lg mt-4 p-2 md:w-[80%]">
-                        <div className="mt-2 w-[280px] md:w-[90%]">
+                    <div className="bg-[#FAF5EA] rounded-lg mt-4 p-2 md:w-[90%]">
+                        <div className="mt-2 w-[280px] md:w-[100%]">
                             <div className="flex flex-col md:flex-row justify-evenly items-center m-3 font-bold ">
-                                <div className="text-white bg-[#000000db] rounded-full p-2 pl-5 pr-5"> Modelo: {data[0].modelo}</div> {!showList && (<Button onClick={handleNewSearch}>Nova Pesquisa</Button>)}
+                                <div className="text-white text-center mb-3 md:mb-0 bg-[#000000db] rounded-full p-2 pl-5 pr-5"> Modelo: {data[0].modelo}</div> {!showList && (<Button onClick={handleNewSearch}>Nova Pesquisa</Button>)}
                             </div>
                             <DataTable data={data} />
                         </div>
