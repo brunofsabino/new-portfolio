@@ -17,7 +17,7 @@ interface DialogProjectProps {
     data: Portfolio; // Recebe apenas um objeto do tipo Portfolio
 }
 
-export function DialogProject({ data }: DialogProjectProps) {
+export function DialogProjectMenu({ data }: DialogProjectProps) {
     const createSlug = (title: string) => {
         return title
             .toLowerCase() // Converte para letras minúsculas
@@ -30,9 +30,9 @@ export function DialogProject({ data }: DialogProjectProps) {
         <Dialog>
             <DialogTrigger asChild>
                 {/* <Button variant="outline">{data.title}</Button> */}
-                <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 cursor-pointer w-72 h-52 m-5 border-[#001726] rounded-3xl flex flex-col justify-evenly items-center">
-                    <h1 className="md:text-3xl text-2xl text-white text-center font-extrabold bg-[#000000e1] rounded-lg m-1" >{data.title}</h1>
-                    <div className="border-2 border-[#001726] rounded-3xl w-[70%] bg-[#FAF5EA] p-1 text-center font-bold  ">
+                <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 cursor-pointer w-44 h-40 m-3 flex justify-center items-center flex-col border-[#001726] rounded-3xl ">
+                    <h1 className="text-1xl text-white text-center font-extrabold bg-[#000000e1]  rounded-lg m-1" >{data.title}</h1>
+                    <div className="border-2 border-[#001726] rounded-3xl text-sm bg-[#FAF5EA] p-1 text-center font-bold  ">
                         {data.technologies.join(", ")}
                     </div>
                 </div>

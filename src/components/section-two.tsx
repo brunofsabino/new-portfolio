@@ -13,14 +13,14 @@ const SectionTwo = () => {
         {
             title: "Qual é o valor do seu veículo?",
             img: '/assets/images/bg-qual-valor.webp',
-            technologies: ['NodeJS', 'ReactJS'],
+            technologies: ['NodeJS', 'NextJS', 'ReactJS'],
             description: "Este projeto permite que você descubra o valor atualizado do seu veículo utilizando dados oficiais da Tabela Fipe. Com uma interface intuitiva, os usuários podem pesquisar por marca, modelo e ano, obtendo rapidamente informações precisas e confiáveis. Este aplicativo destaca-se por sua praticidade e integração com APIs modernas, proporcionando uma experiência interativa e informativa."
         },
         {
-            title: "Titulo 3",
-            img: 'imagem 3',
-            technologies: ['react 3', 'js 3', 'html 3'],
-            description: "..."
+            title: "API - Quem é quem no esporte?",
+            img: '/assets/images/bg-quem-e-quem.webp',
+            technologies: ['NodeJS', 'ReactJS', 'NextJS'],
+            description: "Este projeto realiza web scraping no site Sofascore para gerar uma API completa com informações detalhadas sobre jogadores, times, treinadores e árbitros de diversos esportes. Explore dados atualizados e descubra quem é quem no mundo esportivo por meio de uma interface interativa e informativa, utilizando as mais recentes tecnologias web para oferecer uma experiência única."
         },
     ]
     return (
