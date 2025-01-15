@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 const LoadingOverlay = () => {
     const [messageIndex, setMessageIndex] = useState(0);
 
-    // Lista de mensagens
     const messages = [
         "Estamos acessando e buscando os dados no Sofascore...",
         "Pode ser que demore um pouco, mas vale a pena!",
@@ -11,11 +10,10 @@ const LoadingOverlay = () => {
         "Só mais um instante, estamos processando tudo para você!"
     ];
 
-    // Alterar a mensagem a cada 3 segundos
     useEffect(() => {
         const interval = setInterval(() => {
             setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-        }, 6000);
+        }, 6000); // Alterar a mensagem a cada 6 segundos
         return () => clearInterval(interval);
     }, []);
 

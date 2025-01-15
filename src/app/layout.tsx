@@ -17,9 +17,9 @@ const geistMono = localFont({
   weight: "100 900",
 });
 const roboto = Roboto({
-  subsets: ['latin'], // Inclui os caracteres padrão
-  weight: ['400', '700'], // Escolha os pesos desejados
-  variable: '--font-roboto', // Cria uma variável CSS para Tailwind
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-roboto',
 });
 
 export const metadata: Metadata = {

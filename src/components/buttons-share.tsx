@@ -41,9 +41,6 @@ const ButtonsShare = () => {
                 >
                     <WhatsappIcon size={24} round />
                 </WhatsappShareButton>
-                {/* <TwitterShareButton url={'url'} title={'title'} className=''>
-                    <TwitterIcon size={24} round />
-                </TwitterShareButton> */}
                 <a
                     href="https://github.com/brunofsabino"
                     target="_blank"
@@ -52,7 +49,6 @@ const ButtonsShare = () => {
                     onClick={handleGitHubClick2}
                 >
                     <FaGithub size={24} />
-                    {/* <span>Visite meu GitHub</span> */}
                 </a>
             </div>
         </>

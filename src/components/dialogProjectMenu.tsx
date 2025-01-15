@@ -10,11 +10,9 @@ import {
 } from "@/components/ui/dialog"
 import { Portfolio } from "@/types/Portfolio"
 import Link from "next/link";
-// import { Input } from "@/components/ui/input"
-// import { Label } from "@/components/ui/label"
 
 interface DialogProjectProps {
-    data: Portfolio; // Recebe apenas um objeto do tipo Portfolio
+    data: Portfolio;
 }
 
 export function DialogProjectMenu({ data }: DialogProjectProps) {
@@ -23,13 +21,12 @@ export function DialogProjectMenu({ data }: DialogProjectProps) {
             .toLowerCase() // Converte para letras minúsculas
             .normalize('NFD') // Divide caracteres acentuados em partes (ex.: "é" -> "e" +  ́)
             .replace(/[\u0300-\u036f]/g, '') // Remove marcas de acentuação
-            .replace(/\s+/g, '-') // Substitui espaços por hífens
-            .replace(/[^\w-]+/g, ''); // Remove caracteres especiais, incluindo ? e !
+            .replace(/\s+/g, '-')
+            .replace(/[^\w-]+/g, '');
     };
     return (
         <Dialog>
             <DialogTrigger asChild>
-                {/* <Button variant="outline">{data.title}</Button> */}
                 <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 cursor-pointer w-44 h-40 m-3 flex justify-center items-center flex-col border-[#001726] rounded-3xl ">
                     <h1 className="text-1xl text-white text-center font-extrabold bg-[#000000e1]  rounded-lg m-1" >{data.title}</h1>
                     <div className="border-2 border-[#001726] rounded-3xl text-sm bg-[#FAF5EA] p-1 text-center font-bold  ">

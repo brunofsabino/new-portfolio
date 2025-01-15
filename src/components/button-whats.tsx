@@ -22,15 +22,9 @@ const ButtonWhats = () => {
     return (
         <>
             <div className="flex space-x-1 md:space-x-4" onClick={handleWhatsAppClick}>
-                {/* <WhatsappShareButton
-                    url={"https://wa.me/5511959982142"}
-                    title="Oi! Gostaria de saber mais sobre seu serviço!"
-                > */}
                 <Link href={"https://wa.me/5511959982142"} target="blank">
-
                     <WhatsappIcon size={24} round />
                 </Link>
-                {/* </WhatsappShareButton> */}
             </div>
         </>
 

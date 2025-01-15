@@ -21,45 +21,45 @@ export interface Result {
 export interface Entity {
     name: string;
     slug: string;
-    shortName: string; // Nome abreviado do jogador
+    shortName: string;
     team: Team;
     sport: Sport;
-    position: string; // Exemplo: "M" para Midfielder
-    jerseyNumber: string; // Número da camisa
-    userCount: number; // Número de usuários associados
-    id: number; // ID único do jogador
-    country: Country; // Informações sobre o país do jogador
+    position: string;
+    jerseyNumber: string;
+    userCount: number;
+    id: number;
+    country: Country;
 }
 
 export interface Team {
-    name: string; // Nome do time
-    slug: string; // Identificador único do time no formato slug
-    shortName: string; // Nome curto do time
-    gender: string; // Gênero (Exemplo: "M" para masculino)
+    name: string;
+    slug: string;
+    shortName: string;
+    gender: string;
     sport: Sport;
-    userCount: number; // Número de usuários associados ao time
-    nameCode: string; // Código do nome do time (Exemplo: "PAL")
-    disabled: boolean; // Indica se o time está desativado
-    national: boolean; // Indica se é um time nacional
-    type: number; // Tipo de time
-    id: number; // ID único do time
-    country: Country; // Informações sobre o país do time
-    entityType: string; // Exemplo: "team"
-    subTeams: SubTeam[]; // Lista de sub-times (vazia no exemplo)
+    userCount: number;
+    nameCode: string;
+    disabled: boolean;
+    national: boolean;
+    type: number;
+    id: number;
+    country: Country;
+    entityType: string;
+    subTeams: SubTeam[];
     teamColors: TeamColors;
     fieldTranslations: FieldTranslations;
 }
 
 export interface Sport {
-    name: string; // Nome do esporte (Exemplo: "Football")
-    slug: string; // Identificador único do esporte
-    id: number; // ID do esporte
+    name: string;
+    slug: string;
+    id: number;
 }
 
 export interface Country {
-    alpha2: string; // Código do país (Exemplo: "BR")
-    name: string; // Nome do país (Exemplo: "Brazil")
-    slug: string; // Identificador único do país
+    alpha2: string;
+    name: string;
+    slug: string;
 }
 
 export interface SubTeam {
@@ -67,17 +67,17 @@ export interface SubTeam {
 }
 
 export interface TeamColors {
-    primary: string; // Cor primária do time (Exemplo: "#339966")
-    secondary: string; // Cor secundária do time (Exemplo: "#336633")
-    text: string; // Cor do texto (Exemplo: "#336633")
+    primary: string;
+    secondary: string;
+    text: string;
 }
 
 export interface FieldTranslations {
     nameTranslation?: {
-        [key: string]: string; // Tradução do nome do time (Exemplo: "ru": "Палмейрас")
+        [key: string]: string;
     };
     shortNameTranslation?: {
-        [key: string]: string; // Tradução do nome curto do time
+        [key: string]: string;
     };
 }
 
@@ -86,7 +86,6 @@ const Page = () => {
     const [name, setName] = useState("");
     const [name2, setName2] = useState("");
     const [results, setResults] = useState<Result[]>([]);
-    //const [chartData, setChartData] = useState<ProcessedDataItem[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
@@ -104,7 +103,6 @@ const Page = () => {
         try {
             setLoading(true);
             setError(null);
-
             const response = await fetch("/api/scrape", {
                 method: "POST",
                 headers: {
@@ -153,7 +151,6 @@ const Page = () => {
                         onChange={(e) => setName(e.target.value)} // Atualiza o estado
                     />
                     <Button className="m-1" onClick={handleSearch} disabled={loading}>
-                        {/* {loading ? "Buscando..." : "Buscar"} */}
                         Buscar
                     </Button>
                 </div>

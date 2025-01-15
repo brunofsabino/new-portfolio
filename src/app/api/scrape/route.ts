@@ -24,19 +24,16 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       height: 1080,
     });
 
-    // Acesse a página
+    
     await page.goto("https://www.sofascore.com", { timeout: 600000 });
 
-    // Digite o nome no input
+    
     await page.type("#search-input", name);
 
-    // Aguarde a resposta da API
     const response = await page.waitForResponse((res) =>
-      //res.url().includes("/api/v1/search/all")
       res.url().includes(`/api/v1/search/all?q=${name}&page=0`)
     );
 
-    // Parse da resposta da API
     const data = await response.json();
 
     await browser.close();

@@ -5,13 +5,11 @@ import { Input } from "@/components/ui/input"
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import mixpanel from "@/app/utils/mixpanel";
 
-// Tipo para cada item no array `res`
 interface ResItem {
     periodo: string;
     frequencia: number;
 }
 
-// Tipo para o objeto principal da API
 interface APIResponse {
     nome: string;
     sexo: string | null;
@@ -19,7 +17,6 @@ interface APIResponse {
     res: ResItem[];
 }
 
-// Tipo para os dados processados
 interface ProcessedDataItem {
     periodo: string;
     frequencia: number;
@@ -40,12 +37,11 @@ const Page = () => {
 
     const processAPIData = (data: APIResponse[]): ProcessedDataItem[] => {
         return data[0]?.res.map((item: ResItem) => {
-            // Remove colchetes e ajusta o formato do período
             const periodo = item.periodo
-                .replace("[", "") // Remove o colchete inicial
-                .replace("[", "") // Remove qualquer outro colchete
-                .replace(",", "-") // Substitui a vírgula por um traço
-                .replace("[", ""); // Remove o colchete final, caso necessário
+                .replace("[", "")
+                .replace("[", "")
+                .replace(",", "-")
+                .replace("[", "");
 
             return {
                 periodo,
@@ -59,7 +55,6 @@ const Page = () => {
             alert("Por favor, digite um nome válido!");
             return;
         }
-
         try {
             setLoading(true);
             setError(null);
@@ -97,7 +92,7 @@ const Page = () => {
                         placeholder="Digite seu nome"
                         className="m-1 md:w-[50%]"
                         value={name}
-                        onChange={(e) => setName(e.target.value)} // Atualiza o estado
+                        onChange={(e) => setName(e.target.value)}
                     />
                     <Button className="m-1" onClick={handleSearch} disabled={loading}>
                         {loading ? "Buscando..." : "Buscar"}

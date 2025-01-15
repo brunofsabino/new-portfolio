@@ -27,8 +27,6 @@ const Main = () => {
                         <div className="mr-3">
                             <span>(11)95998-2142</span>
                         </div>
-                        {/* <span>CLIQUE</span> */}
-                        {/* <IoLogoWhatsapp className="-rotate-90" color="green" /> */}
                         <ButtonWhats />
                     </div>
                 </div>
@@ -55,10 +53,6 @@ const Main = () => {
             <div className=" flex items-center justify-center  w-[7%]">
                 <div className="rotate-90 lg:flex hidden font-sans text-gray-500">
                     <div className=" flex justify-evenly items-start w-[450px] h-[100px]">
-                        {/* <IoLogoWhatsapp className="-rotate-90" color="green" /> */}
-                        {/* <div>
-                <span>(11)95998-2142</span>
-              </div> */}
                         <span>FALE COMIGO</span>
                         <FaLongArrowAltDown className="-rotate-90 text-primary" />
                         <ButtonsShare />

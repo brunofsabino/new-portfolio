@@ -13,16 +13,14 @@ const Header = () => {
                             BRUNO <p className="text-primary ml-1">FERRAZ SABINO</p>
                         </div>
                     </Link>
-
                 </div>
-                <Separator className="" />
-
+                <Separator />
             </div>
-            <div className="">
+            <div >
                 <Separator orientation="vertical" />
             </div>
             <div className=" flex flex-col items-center text-black">
-                <Separator className="" />
+                <Separator />
                 <div className="hidden lg:flex">
                     <NavigationMenuDemo />
                 </div>

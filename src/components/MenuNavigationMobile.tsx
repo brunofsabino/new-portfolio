@@ -58,29 +58,6 @@ const MenuNavigationMobile = () => {
                 </NavigationMenuItem>
 
                 <Separator className="separator w-full my-2" />
-                {/* <NavigationMenuItem className="">
-                    <Accordion type="single" collapsible className="w-full">
-                        <AccordionItem value="item-2">
-                            <AccordionTrigger className={navigationMenuTriggerStyle()}>
-                                <div className="flex justify-center items-center">
-                                    <RiArticleFill className="text-2xl mr-1" color="#48BC6A" /><span>Artigos</span>
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent>
-                                <ul className="gap-3 p-4  w-[200px] md:w-[300px] md:grid-cols-2 lg:w-[600px] flex flex-col items-center">
-                                   
-
-                                    <SheetClose asChild><ListItem href="/artigos/teologiaedoutrina" title="Teologia e Doutrina" className="text-center"></ListItem></SheetClose>
-                                    <SheetClose asChild><ListItem href="/artigos/vidacrista" title="Vida Cristã" className="text-center"></ListItem></SheetClose>
-                                    <SheetClose asChild><ListItem href="/artigos/familiaerelacionamentos" title="Família e Relacionamentos" className="text-center"></ListItem></SheetClose>
-                                    <SheetClose asChild><ListItem href="/artigos/espiritualidadeecrescimentopessoal" title="Espiritualidade e Crescimento Pessoal" className="text-center"></ListItem></SheetClose>
-                                    <SheetClose asChild><ListItem href="/artigos/historiadasigrejas" title="História das Igrejas" className="text-center"></ListItem></SheetClose>
-                                    <SheetClose asChild><ListItem href="/artigos/culturaeentretenimento" title="Cultura e Entretenimento" className="text-center"></ListItem></SheetClose>
-                                </ul>
-                            </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
-                </NavigationMenuItem> */}
                 <NavigationMenuItem className=" " >
                     <SheetClose asChild>
                         <NavigationMenuLink href="/#about" className={navigationMenuTriggerStyle()}>

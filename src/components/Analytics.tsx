@@ -9,8 +9,8 @@ export default function Analytics() {
         mixpanel.track('Page View', {
             path: window.location.pathname,
         });
-        identifyUser(); // Chama a função para identificar o usuário
+        identifyUser();
     }, []);
 
-    return null; // Não renderiza nada
+    return null;
 }

@@ -12,35 +12,31 @@ import {
 } from "@/components/ui/dialog"
 import { Portfolio } from "@/types/Portfolio"
 import Link from "next/link";
-// import { Input } from "@/components/ui/input"
-// import { Label } from "@/components/ui/label"
 
 interface DialogProjectProps {
-    data: Portfolio; // Recebe apenas um objeto do tipo Portfolio
+    data: Portfolio;
 }
 
 export function DialogProject({ data }: DialogProjectProps) {
     const createSlug = (title: string) => {
         return title
-            .toLowerCase() // Converte para letras minúsculas
-            .normalize('NFD') // Divide caracteres acentuados em partes (ex.: "é" -> "e" +  ́)
-            .replace(/[\u0300-\u036f]/g, '') // Remove marcas de acentuação
-            .replace(/\s+/g, '-') // Substitui espaços por hífens
-            .replace(/[^\w-]+/g, ''); // Remove caracteres especiais, incluindo ? e !
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/[^\w-]+/g, '');
     };
 
-    // Função para rastrear quando o diálogo é aberto
     const handleDialogOpen = () => {
         mixpanel.track('Dialog Opened', {
-            projectTitle: data.title, // Nome do projeto
+            projectTitle: data.title,
         });
     };
 
-    // Função para rastrear quando o usuário clica em "Veja o Projeto"
     const handleSeeProjectClick = () => {
         mixpanel.track('See Project Clicked', {
-            projectTitle: data.title, // Nome do projeto
-            technologies: data.technologies.join(', '), // Tecnologias utilizadas
+            projectTitle: data.title,
+            technologies: data.technologies.join(', '),
         });
     };
     return (

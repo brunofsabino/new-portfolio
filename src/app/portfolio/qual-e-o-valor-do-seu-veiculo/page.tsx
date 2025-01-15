@@ -33,7 +33,6 @@ const Page = () => {
             setShowList(true);
         }
         if (showList && loadingNewSearch) {
-            console.log(loadingNewSearch)
             setLoadingNewSearch(false);
         }
         mixpanel.track("Acessou - Qual valor do seu Veiculo", {
@@ -61,30 +60,26 @@ const Page = () => {
             setLoadingNewSearch(true);
             setShowList(true);
             setQuery("");
-            console.log("aqui")
         }
     }
     const handleSelect = (codigoFipe: string, modelo: string) => {
         setQuerySelected(true);
-        setCodigoFipe(codigoFipe); // Atualiza o código FIPE
-        setQuery(modelo); // Atualiza a query para o modelo
+        setCodigoFipe(codigoFipe);
+        setQuery(modelo);
     };
 
     const handleCloseList = () => {
-        setShowList(false); // Fecha a lista de comandos após selecionar
+        setShowList(false);
     };
     const handleToggleList = () => {
-        setShowList(!showList); // Alterna a visibilidade da lista
+        setShowList(!showList);
     };
     return (
         <div style={{
             backgroundImage: 'url(/assets/images/bg-qual-valor.webp)',
-            backgroundPosition: 'center', // Centraliza a imagem no container
-            backgroundSize: 'cover', // Faz com que a imagem cubra todo o container
-            backgroundRepeat: 'no-repeat', // Evita repetição da imagem
-            //height: '100vh', // Define a altura como a altura total da tela
-            //width: '100%', // Define a largura como 100% do container
-
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
         }} className="w-full min-h-screen font-sans flex items-center justify-center flex-col">
             <div className="border rounded-2xl m-4 p-4 flex flex-col items-center justify-center bg-[#000000db]">
                 <h1 className="md:text-5xl text-3xl text-white text-center font-extrabold" >QUAL É O VALOR DO SEU VEÍCULO?</h1>
@@ -95,8 +90,8 @@ const Page = () => {
                         onSelect={handleSelect}
                         onQueryChange={(newQuery) => setQuery(newQuery)}
                         onClose={handleCloseList}
-                        showList={showList} // Passa o showList como prop
-                        onToggleList={handleToggleList} // Passa a função para alternar a visibilidade da lista
+                        showList={showList}
+                        onToggleList={handleToggleList}
                     />
                     <Button onClick={handleSearch} disabled={loading} > {loading ?? <Loader2 className="animate-spin" />} {loading ? "Aguarde..." : "Buscar"}</Button>
                 </div>
