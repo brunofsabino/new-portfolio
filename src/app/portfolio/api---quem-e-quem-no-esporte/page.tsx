@@ -1,11 +1,12 @@
 "use client"
+import mixpanel from "@/app/utils/mixpanel";
 import { AccordionCode } from "@/components/AccordionCode";
 import LoadingOverlay from "@/components/LoadingOverlay";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export interface SearchResult {
     results: Result[];
@@ -89,7 +90,11 @@ const Page = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-
+    useEffect(() => {
+        mixpanel.track("Acessou - Quem é quem no Esporte?", {
+            action: "Acessou o Projeto - Quem é quem no Esporte?",
+        });
+    }, [])
     const handleSearch = async () => {
         if (!name.trim()) {
             alert("Por favor, digite um nome válido!");
@@ -113,7 +118,6 @@ const Page = () => {
             }
 
             const { data } = await response.json();
-            console.log("Dados recebidos:", data);
             if (Array.isArray(data.results)) {
                 setResults(data.results);
                 setName("")
@@ -129,6 +133,9 @@ const Page = () => {
             }
         } finally {
             setLoading(false);
+            mixpanel.track("Clicou em Buscar - Quem é quem no Esporte?", {
+                action: "Clicou em Buscar - Quem é quem no Esporte?",
+            });
         }
     };
     return (

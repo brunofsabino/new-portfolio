@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Roboto } from 'next/font/google';
 import Header from "@/components/header";
+import Analytics from "@/components/Analytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={` ${roboto.variable} antialiased  md:mx-auto bg-[#FAF5EA] `} // ${geistSans.variable} ${geistMono.variable}
       >
         <Header />
+        <Analytics /> {/* Adiciona o componente client-side */}
         <main className="container mx-auto">{children}</main>
         <footer className="bg-[#001726] bg-primary text-white">
           <div className="container mx-auto text-center p-8 font-bold font-sans">

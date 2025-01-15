@@ -1,4 +1,5 @@
 
+"use client"
 import { Button } from "@/components/ui/button";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaLongArrowAltDown } from "react-icons/fa";
@@ -7,8 +8,15 @@ import Image from 'next/image'
 import ButtonsShare from "@/components/buttons-share";
 import ButtonWhats from "@/components/button-whats";
 import Link from "next/link";
+import mixpanel from "mixpanel-browser";
 
 const Main = () => {
+    const handleButtonClick = () => {
+        mixpanel.track("Clicked on Botao", {
+            action: "Clicou no botão do Fale Comigo da Main",
+        });
+    };
+
     return (
         <section id="home" className="lg:flex  min-h-[500px] lg:pb-4 p-4">
             <div className=" flex items-center lg:justify-center justify-evenly lg:w-[7%] lg:h-[500px]">
@@ -32,7 +40,7 @@ const Main = () => {
                     <div><p className="lg:text-2xl md:text-lg text-base flex font-bold mt-7">Desenvolvedor Full-Stack & Freelance</p></div>
                     <div><p className="flex font-bold md:text-base text-sm text-gray-800 mt-3 mb-7">Sou um Desenvolvedor Full-Stack, atuando com NodeJs, ReactJS & NextJs e PHP. Possuo as habilidades e conhecimentos necessários para tornar seu projeto um sucesso.</p></div>
                     <Link href={"https://wa.me/5511959982142"} target="blank">
-                        <Button>Fale comigo</Button>
+                        <Button onClick={handleButtonClick}>Fale comigo</Button>
                     </Link>
                 </div>
                 <div className="flex items-end justify-center lg:w-[40%]">

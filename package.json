@@ -21,6 +21,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "lucide-react": "^0.464.0",
+    "mixpanel-browser": "^2.58.0",
     "next": "15.0.3",
     "puppeteer": "^24.0.0",
     "react": "18.2.0",
@@ -30,9 +31,11 @@
     "react-share": "^5.1.1",
     "recharts": "^2.15.0",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
+    "@types/mixpanel-browser": "^2.51.0",
     "@types/node": "^20",
     "@types/puppeteer": "^5.4.7",
     "@types/react": "^18",

@@ -1,8 +1,9 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import mixpanel from "@/app/utils/mixpanel";
 
 // Tipo para cada item no array `res`
 interface ResItem {
@@ -30,6 +31,12 @@ const Page = () => {
     const [chartData, setChartData] = useState<ProcessedDataItem[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        mixpanel.track("Acessou - Quantos de vc existe", {
+            action: "Acessou o Projeto - Quantos de vc existe no Brasil",
+        });
+    }, [])
 
     const processAPIData = (data: APIResponse[]): ProcessedDataItem[] => {
         return data[0]?.res.map((item: ResItem) => {
@@ -73,6 +80,9 @@ const Page = () => {
             setChartData([]);
         } finally {
             setLoading(false);
+            mixpanel.track("Clicked no Botao Buscar - Quantos de vc existe", {
+                action: "Clicked no Botao Buscar - Quantos de vc existe no Brasil",
+            });
         }
     };
 

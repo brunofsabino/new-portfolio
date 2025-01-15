@@ -1,3 +1,5 @@
+"use client"
+import mixpanel from "@/app/utils/mixpanel";
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -26,10 +28,24 @@ export function DialogProject({ data }: DialogProjectProps) {
             .replace(/\s+/g, '-') // Substitui espaços por hífens
             .replace(/[^\w-]+/g, ''); // Remove caracteres especiais, incluindo ? e !
     };
+
+    // Função para rastrear quando o diálogo é aberto
+    const handleDialogOpen = () => {
+        mixpanel.track('Dialog Opened', {
+            projectTitle: data.title, // Nome do projeto
+        });
+    };
+
+    // Função para rastrear quando o usuário clica em "Veja o Projeto"
+    const handleSeeProjectClick = () => {
+        mixpanel.track('See Project Clicked', {
+            projectTitle: data.title, // Nome do projeto
+            technologies: data.technologies.join(', '), // Tecnologias utilizadas
+        });
+    };
     return (
         <Dialog>
-            <DialogTrigger asChild>
-                {/* <Button variant="outline">{data.title}</Button> */}
+            <DialogTrigger asChild onClick={handleDialogOpen}>
                 <div style={{ backgroundImage: `url(${data.img})` }} className="border-2 cursor-pointer w-72 h-52 m-5 border-[#001726] rounded-3xl flex flex-col justify-evenly items-center">
                     <h1 className="md:text-3xl text-2xl text-white text-center font-extrabold bg-[#000000e1] rounded-lg m-1" >{data.title}</h1>
                     <div className="border-2 border-[#001726] rounded-3xl w-[70%] bg-[#FAF5EA] p-1 text-center font-bold  ">
@@ -51,8 +67,8 @@ export function DialogProject({ data }: DialogProjectProps) {
                 </DialogHeader>
 
                 <DialogFooter>
-                    <Link href={`portfolio/${createSlug(data.title)}`} >
-                        <Button >Veja o Projeto</Button>
+                    <Link href={`portfolio/${createSlug(data.title)}`}>
+                        <Button onClick={handleSeeProjectClick} >Veja o Projeto</Button>
                     </Link>
                 </DialogFooter>
             </DialogContent>

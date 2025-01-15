@@ -9,7 +9,7 @@ const Header = () => {
             <div className="flex-1 ">
                 <div className="p-2 font-sans font-bold">
                     <Link href="/#home" legacyBehavior passHref>
-                        <div className="flex cursor-pointer">
+                        <div className="flex cursor-pointer text-black">
                             BRUNO <p className="text-primary ml-1">FERRAZ SABINO</p>
                         </div>
                     </Link>
@@ -21,7 +21,7 @@ const Header = () => {
             <div className="">
                 <Separator orientation="vertical" />
             </div>
-            <div className=" flex flex-col items-center">
+            <div className=" flex flex-col items-center text-black">
                 <Separator className="" />
                 <div className="hidden lg:flex">
                     <NavigationMenuDemo />

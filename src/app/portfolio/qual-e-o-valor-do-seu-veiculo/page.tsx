@@ -4,6 +4,7 @@ import { Loader2 } from "lucide-react"
 import { useEffect, useState } from "react";
 import { DataTable } from "./dataTable";
 import { Button } from "@/components/ui/button";
+import mixpanel from "@/app/utils/mixpanel";
 
 interface DataItem {
     valor: string;
@@ -30,13 +31,14 @@ const Page = () => {
     useEffect(() => {
         if (query.length === 0) {
             setShowList(true);
-
-
         }
         if (showList && loadingNewSearch) {
             console.log(loadingNewSearch)
             setLoadingNewSearch(false);
         }
+        mixpanel.track("Acessou - Qual valor do seu Veiculo", {
+            action: "Acessou o Projeto - Qual valor do seu Veiculo?",
+        });
     }, [query, loadingNewSearch])
 
     const handleSearch = async () => {
@@ -45,10 +47,12 @@ const Page = () => {
             if (codigoFipe) {
                 const response = await fetch(`https://brasilapi.com.br/api/fipe/preco/v1/${codigoFipe}`);
                 const data = await response.json();
-                console.log("Dados da API:", data);
                 setLoading(false);
                 setData(data); // Atualiza os dados no estado
                 setQuerySelected(false);
+                mixpanel.track("Clicou em Buscar - Qual valor do seu Veiculo", {
+                    action: "Clicou em Buscar - Qual valor do seu Veiculo?",
+                });
             }
         }
     };
