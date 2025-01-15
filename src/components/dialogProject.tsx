@@ -53,12 +53,12 @@ export function DialogProject({ data }: DialogProjectProps) {
                 <DialogHeader>
                     <DialogTitle> <div className="font-sans text-primary">Projeto: {data.title}</div> </DialogTitle>
                     <DialogDescription>
-                        <div className="text-black font-sans mt-3">
+                        <span className="text-black font-sans mt-3 block">
                             {data.description}
-                            <span className="font-bold">
-                                <br /><br /> Tecnologias utilizadas: {data.technologies.join(", ")}.
-                            </span>
-                        </div>
+                        </span>
+                        <span className="font-bold block mt-2">
+                            Tecnologias utilizadas: {data.technologies.join(", ")}.
+                        </span>
                     </DialogDescription>
                 </DialogHeader>
 
