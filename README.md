@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Meu Portfólio
 
-## Getting Started
+Bem-vindo ao meu portfólio! Aqui você encontrará projetos que combinam inovação, tecnologia e experiência interativa. Cada um dos projetos abaixo foi desenvolvido com ferramentas modernas e destaca-se pela sua funcionalidade e integração com APIs. Explore os detalhes de cada projeto:
 
-First, run the development server:
+- **Imagem do Portfólio:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Portfólio](https://github.com/user-attachments/assets/933d1f21-46f1-48a0-aa34-9f06ee63f644)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Projetos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. **Quantos de você existe no Brasil?**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Descrição:** Descubra quantas pessoas compartilham o mesmo nome que o seu no Brasil! Este projeto utiliza a API do IBGE para consultar estatísticas de nomes de forma interativa e informativa. Uma excelente maneira de explorar dados populacionais de maneira divertida e curiosa.
+- **Tecnologias:** NodeJS, ReactJS
+- **Imagem do Projeto:**  
+  ![Quantos de você existe no Brasil?](https://github.com/user-attachments/assets/12171d9d-c6c8-420b-9bb0-88d44ab8015a)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### 2. **Qual é o valor do seu veículo?**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Descrição:** Encontre o valor atualizado do seu veículo com base nos dados da Tabela Fipe. Este projeto permite que os usuários pesquisem por marca, modelo e ano, oferecendo informações precisas e confiáveis. Com uma interface intuitiva, ele é ideal para quem deseja saber rapidamente o preço de mercado de seu veículo.
+- **Tecnologias:** NodeJS, NextJS, ReactJS
+- **Imagem do Projeto:**
+  ![Qual é o valor do seu veículo?](https://github.com/user-attachments/assets/952efb7f-8847-41d2-9440-16c3601b5d25)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 3. **API - Quem é quem no esporte?**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Descrição:** Explore informações detalhadas sobre jogadores, times, treinadores e árbitros de diversos esportes com esta API poderosa. Utilizando web scraping no site Sofascore, este projeto oferece dados atualizados e organizados, proporcionando uma experiência interativa para os apaixonados por esportes.
+- **Tecnologias:** NodeJS, ReactJS, NextJS
+- **Imagem do Projeto:**  
+  ![API - Quem é quem no esporte?](https://github.com/user-attachments/assets/ce158675-c28a-4bae-883c-188abbb70558)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Como acessar os projetos
+
+Cada projeto está disponível no portfólio. Sinta-se à vontade para explorar e testar as funcionalidades oferecidas!
+
+- **Contato:** Caso tenha interesse em colaborações ou sugestões, entre em contato através das formas disponíveis no portfólio.
+
+Espero que goste dos projetos apresentados!
