@@ -13,7 +13,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     }
 
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: false,
       args: ["--no-sandbox", "--disable-setuid-sandbox", "--window-size=1920,1080"], 
     });
 
