@@ -27,7 +27,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     
     await page.goto("https://www.sofascore.com", { timeout: 600000 });
 
-    
+    await page.waitForSelector('#search-input', { timeout: 5000 });
     await page.type("#search-input", name);
 
     const response = await page.waitForResponse((res) =>
