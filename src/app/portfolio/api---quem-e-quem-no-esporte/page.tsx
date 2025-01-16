@@ -103,7 +103,7 @@ const Page = () => {
         try {
             setLoading(true);
             setError(null);
-            const response = await fetch(`${process.env.BASE_URL}/api/scrape`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/scrape`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
