@@ -27,7 +27,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
     // Aumentar timeout e garantir carregamento completo
     //await page.goto("https://www.sofascore.com", { waitUntil: "networkidle2", timeout: 120000 });
-    await page.goto("https://www.sofascore.com", { waitUntil: "domcontentloaded", timeout: 120000 });
+    await page.goto("https://www.sofascore.com", { waitUntil: "networkidle2", timeout: 120000 });
 
      // Esperar pela presença do seletor
     await page.waitForSelector("#search-input", { timeout: 150000 });
