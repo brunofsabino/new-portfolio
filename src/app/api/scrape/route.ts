@@ -21,11 +21,17 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     await page.setViewport({ width: 1920, height: 1080 });
 
     // Configurar User-Agent
-    await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36");
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+    );
 
     // Aumentar timeout e garantir carregamento completo
-    await page.goto("https://www.sofascore.com", { waitUntil: "networkidle2", timeout: 120000 });
+    //await page.goto("https://www.sofascore.com", { waitUntil: "networkidle2", timeout: 120000 });
+    await page.goto("https://www.sofascore.com", { waitUntil: "domcontentloaded", timeout: 120000 });
 
+     // Esperar pela presença do seletor
+    await page.waitForSelector("#search-input", { timeout: 15000 });
+    
     // Verificar se o elemento existe
     const searchInput = await page.$("#search-input");
     if (!searchInput) {
