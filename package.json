@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "git pull && npm install && next build && pm2 restart portfolio-deploy"
+    "deploy": "git pull && npm install && next build && pm2 restart new-portfolio"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.2",
