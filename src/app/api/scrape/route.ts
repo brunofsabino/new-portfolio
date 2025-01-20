@@ -30,8 +30,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     await page.goto("https://www.sofascore.com", { waitUntil: "domcontentloaded", timeout: 120000 });
 
      // Esperar pela presença do seletor
-    await page.waitForSelector("#search-input", { timeout: 15000 });
-    
+    await page.waitForSelector("#search-input", { timeout: 150000 });
+
     // Verificar se o elemento existe
     const searchInput = await page.$("#search-input");
     if (!searchInput) {
